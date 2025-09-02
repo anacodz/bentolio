@@ -31,7 +31,6 @@ const Navbar = () => {
           href="#hero" 
           className="font-medium text-base md:text-lg text-[#111827] hover:text-[#111827]/80 transition-colors duration-300"
         >
-          Yashvardhan Singh
         </a>
          */}
 

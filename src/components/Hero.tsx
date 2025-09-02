@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Code, Terminal } from 'lucide-react';
 import TechForAll from './TechForAll';
 
-const roles = ["Systems Engineer", "DevOps Developer", "AI Enthusiast"];
+const roles = ["Analyst", "Gen AI", "Consultant"];
 
 const TYPING_SPEED = 75; // ms per character
 const DELAY_BETWEEN_ROLES = 300; // ms after a role is fully typed
@@ -45,7 +45,7 @@ const Hero = () => {
       
       <div className="relative z-10">
         <h1 className="custom-hero-h1 text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
-          Yashvardhan Singh
+          <span style={{ color: '#8B5C2A' }}>A</span>nanya <span style={{ color: '#8B5C2A' }}>S</span>ingh
         </h1>
         <div className="overflow-hidden h-10 md:h-12 flex items-center">
           <span className="text-lg md:text-xl font-semibold text-[#111827]/90 py-2 tracking-tight">

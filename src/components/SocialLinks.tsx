@@ -17,11 +17,11 @@ const SocialLinks = () => {
   }, []);
 
   return (
-    <div className="h-full p-4 md:p-6 flex flex-col justify-between">
-      <div className="mb-3 flex justify-between items-center">
+    <div className="h-full p-4 md:p-6 flex flex-col">
+      <div className="mb-1 flex justify-between items-center">
         <div>
-          <h2 className="custom-connect-h1 text-lg font-semibold mb-2">Connect</h2>
-          <p className="text-[#111827]/70 text-sm mb-2">
+          <h2 className="custom-connect-h1 text-lg font-semibold mb-1">Connect</h2>
+          <p className="text-[#111827]/70 text-sm mb-1">
             Let's connect and collaborate!
           </p>
         </div>
@@ -30,10 +30,9 @@ const SocialLinks = () => {
           <span>{time}</span>
         </div>
       </div>
-      
-      <div className="grid grid-cols-1 gap-2">
+  <div className="grid grid-cols-1 gap-6 mt-4">
         <a
-          href="https://github.com/pythonicboat"
+          href="https://github.com/anacodz"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 p-3 bg-[#FFF9F6] rounded-lg transition-all duration-300 hover:translate-x-1"
@@ -43,7 +42,7 @@ const SocialLinks = () => {
         </a>
         
         <a
-          href="https://linkedin.com/in/yashvardhan04"
+          href="https://linkedin.com/in/ananya04singh"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 p-3 bg-[#FFF9F6] rounded-lg transition-all duration-300 hover:translate-x-1"
@@ -51,19 +50,9 @@ const SocialLinks = () => {
           <Linkedin size={16} />
           <span className="font-medium text-sm">LinkedIn</span>
         </a>
-        
-        <a
-          href="https://vsyash.medium.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 p-3 bg-[#FFF9F6] rounded-lg transition-all duration-300 hover:translate-x-1"
-        >
-          <Newspaper size={16} />
-          <span className="font-medium text-sm">Medium</span>
-        </a>
 
         <a
-          href="mailto:vs21yash@gmail.com"
+          href="mailto:ana21singh@gmail.com"
           className="flex items-center gap-2 p-3 bg-[#FFF9F6] rounded-lg transition-all duration-300 hover:translate-x-1"
         >
           <Mail size={16} />
