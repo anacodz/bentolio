@@ -104,7 +104,3 @@ body{background:#fffdf7;color:var(--ink)}
 }
 
 
-/* Hero layout without a profile image */
-.hero{grid-template-columns:1fr;min-height:440px}
-.hero-copy{max-width:760px}
-.hero-art{display:none}
