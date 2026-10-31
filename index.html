@@ -9,9 +9,20 @@
     <meta property="og:title" content="Ananya Singh | AI / ML Engineer" />
     <meta property="og:description" content="Building intelligent systems with machine learning and AI." />
     <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://anacodz.vercel.app/" />
     <meta property="og:url" content="https://anacodz.vercel.app/" />
   </head>
   <body>
+    <script>
+      // Remove ChatGPT link-tracking from the visible URL while preserving other parameters.
+      (function () {
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('utm_chatgpt')) {
+          url.searchParams.delete('utm_chatgpt');
+          window.history.replaceState({}, document.title, url.pathname + url.search + url.hash);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
