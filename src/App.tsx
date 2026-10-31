@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail, FileSearch, Eye, BrainCircuit, Layers3 } from 'lucide-react';
 
-import BentoGrid from './components/BentoGrid';
-import { Analytics } from "@vercel/analytics/react"
+const projects = [
+  { n: '01', title: 'DocuQuery', type: 'ENTERPRISE DOCUMENT INTELLIGENCE', desc: 'An AI-powered document assistant that makes information easier to find, understand and use across multiple document formats.', tags: ['RAG', 'LLMs', 'FastAPI', 'Streamlit'], icon: FileSearch, href: 'https://github.com/anacodz' },
+  { n: '02', title: 'Document Forgery Detection', type: 'COMPUTER VISION · DEEP LEARNING', desc: 'A deep learning system designed to identify forged identity documents through image analysis and visual patterns.', tags: ['Computer Vision', 'CNN', 'OpenCV', 'Python'], icon: Eye, href: 'https://github.com/anacodz' },
+  { n: '03', title: 'Handwritten Digit Recognition', type: 'NEURAL NETWORKS · MNIST', desc: 'A PyTorch model that recognises handwritten digits, reaching 99.26% test accuracy on the MNIST dataset.', tags: ['Deep Learning', 'PyTorch', 'MNIST'], icon: BrainCircuit, href: 'https://github.com/anacodz' },
+  { n: '04', title: 'AI Job Classifier', type: 'NLP · INTELLIGENT CLASSIFICATION', desc: 'An NLP-based application that classifies and analyses job postings using machine-learning techniques.', tags: ['NLP', 'Transformers', 'Scikit-learn'], icon: Layers3, href: 'https://github.com/anacodz/AI_JOB_CLASSIFIER' },
+];
+const skills = ['Python', 'PyTorch', 'TensorFlow', 'Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'OpenCV', 'SQL', 'AWS', 'Git', 'Power BI'];
 
-
-function App() {
-  return (
-    <div className="min-h-screen bg-[#111827] text-[#111827] font-sans">
-      <main className="container mx-auto px-4 py-8">
-        {/* <Navbar /> */}
-        <BentoGrid />
-        <Analytics />
-      </main>
-    </div>
-  );
+export default function App() {
+ return <div className="site-shell">
+  <header className="topbar"><a className="wordmark" href="#home">ANANYA<span>.</span></a><nav><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav><div className="top-actions"><a className="social-icon" href="https://github.com/anacodz" aria-label="GitHub"><Github/></a><a className="social-icon" href="https://www.linkedin.com/in/ananya04singh/" aria-label="LinkedIn"><Linkedin/></a><a className="pill-button dark small" href="#contact">Let’s connect <ArrowRight/></a></div></header>
+  <main>
+   <section className="hero section-wrap" id="home"><div className="hero-copy"><div className="eyebrow"><span>HI, I’M</span><i/></div><h1>Ananya Singh</h1><p className="hero-role">AI / ML ENGINEER &amp; BUILDER</p><p className="hero-description">I build AI systems that solve real-world problems — from document understanding to intelligent classification. I’m passionate about turning complex ideas into simple, impactful solutions.</p><div className="hero-buttons"><a className="pill-button dark" href="#projects">View my work <ArrowRight/></a><a className="pill-button outline" href="mailto:ana21singh@gmail.com"><Mail/> Get in touch</a></div><p className="availability"><span/> Currently exploring opportunities in AI/ML and Research.</p></div>
+    <div className="hero-art"><div className="photo-halo"/><div className="photo-frame"><img src="https://files.openai.com/content?id=file_000000001b4082099b577ac98ba0cbc6" alt="Portrait of Ananya Singh"/></div><div className="hand-note note-left">Building<br/>intelligent<br/>solutions <span>↗</span></div><div className="hand-note note-right">Curious<br/>learner<br/>Problem-solver<br/>Always building</div><div className="paper-note">IDEAS<br/>MODELS<br/>PRODUCTS<br/>IMPACT</div><span className="sparkle s-one">✳</span><span className="sparkle s-two">✧</span></div>
+   </section>
+   <section className="projects-section section-wrap" id="projects"><div className="section-kicker"><span>FEATURED PROJECTS</span><i/><a href="https://github.com/anacodz">VIEW ALL PROJECTS <ArrowRight/></a></div><h2>Turning ideas into real-world impact</h2><p className="section-intro">A selection of projects where I’ve applied machine learning, deep learning and AI to solve practical problems.</p><div className="project-grid">{projects.map(p=>{const Icon=p.icon;return <a className="project-card" href={p.href} target="_blank" rel="noreferrer" key={p.n}><div className="project-visual"><span>{p.n} / SELECTED WORK</span><div className="project-icon"><Icon/></div><i/></div><p className="project-kind">{p.type}</p><h3>{p.title}</h3><p className="project-description">{p.desc}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><ArrowUpRight className="card-arrow"/></a>})}</div></section>
+   <section className="about-section section-wrap" id="about"><div className="section-kicker"><span>A LITTLE ABOUT ME</span><i/></div><div className="about-grid"><h2>Curiosity first.<br/><em>Impact always.</em></h2><div className="about-copy"><p>I’m Ananya, an Information Technology graduate focused on machine learning, deep learning and building useful AI products. I enjoy taking an idea from research and experimentation to a working application.</p><p>My work spans computer vision, NLP and retrieval-augmented generation. I’m especially interested in intelligent systems that make complex information more accessible.</p><a className="text-link" href="https://github.com/anacodz">Explore my GitHub <ArrowUpRight/></a></div></div><div className="skill-cloud">{skills.map(s=><span key={s}>{s}</span>)}</div></section>
+   <section className="experience-section section-wrap" id="experience"><div className="section-kicker"><span>BACKGROUND</span><i/></div><div className="experience-grid"><h2>Learning, building<br/><em>and growing.</em></h2><div className="experience-item"><span className="experience-date">2022 — 2026</span><h3>B.Tech (Hons.) — Information Technology</h3><p>Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar</p><span className="experience-detail">Coursework across machine learning, data analytics, cloud computing and advanced programming.</span></div></div></section>
+   <section className="contact-section section-wrap" id="contact"><div className="contact-card"><div className="section-kicker light"><span>HAVE A PROJECT IN MIND?</span><i/></div><h2>Let’s make something<br/><em>meaningful.</em></h2><p>Open to conversations about AI/ML opportunities, research and ideas worth building.</p><a className="pill-button cream" href="mailto:ana21singh@gmail.com">Say hello <ArrowUpRight/></a><div className="contact-decoration">A<span>.</span></div></div></section>
+  </main>
+  <footer className="footer section-wrap"><a className="wordmark" href="#home">ANANYA<span>.</span></a><p>Designed with intention. Built with curiosity.</p><div><a href="https://github.com/anacodz">GitHub</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="mailto:ana21singh@gmail.com">Email</a></div><span>© 2026 Ananya Singh</span></footer><Analytics/>
+ </div>
 }
-
-export default App;
